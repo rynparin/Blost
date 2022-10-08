@@ -1,4 +1,4 @@
-app = "rynparin-c545"
+app = "blost-c545"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = [ ]
