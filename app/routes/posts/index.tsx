@@ -1,5 +1,5 @@
 import { json } from '@remix-run/node';
-import { Link, useLoaderData } from '@remix-run/react';
+import { NavLink, Link, useLoaderData } from '@remix-run/react';
 
 import { getPosts } from '~/models/post.server';
 import { useOptionalAdminUser } from '~/utils';
@@ -21,8 +21,7 @@ export default function Posts() {
 	const adminUser = useOptionalAdminUser();
 
 	return (
-		<main>
-			<h1>Posts</h1>
+		<main className="">
 			{adminUser && (
 				<Link to="admin" className="text-red-600 underline">
 					Admin
@@ -34,7 +33,7 @@ export default function Posts() {
 						<Link
 							prefetch="intent"
 							to={post.slug}
-							className="text-blue-600 underline"
+							className="text-blue-800 underline"
 						>
 							{post.title}
 						</Link>
